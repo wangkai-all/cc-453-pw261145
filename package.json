@@ -1,0 +1,22 @@
+{
+  "name": "browser-rpa-collector",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Resumable browser RPA collection pipeline with checkpointed state, download ledger and admin dashboard",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5"
+  },
+  "scripts": {
+    "test": "node --import ./test/setup.js --test --test-concurrency=1 \"test/*.test.js\"",
+    "fixture": "node fixture/server.js",
+    "admin": "node bin/admin.js",
+    "rpa": "node bin/rpa.js",
+    "verify": "node --import ./test/setup.js --test --test-concurrency=1 \"test/*.test.js\"",
+    "bootstrap": "bash scripts/bootstrap-browser-env.sh"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "playwright": "^1.65.1"
+  }
+}
